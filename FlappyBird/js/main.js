@@ -13,6 +13,7 @@ var _main = function () {
 		text_game_over: 'img/text_game_over.png',
 		score_panel: 'img/score_panel.png',
 		button_play: 'img/button_play.png',
+		title: 'img/title.png',
 	}
 
 	var game = new GameFrame(images, function (g) {

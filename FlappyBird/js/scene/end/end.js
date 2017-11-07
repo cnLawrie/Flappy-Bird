@@ -33,9 +33,8 @@ class SceneEnd extends Scene{
 	setupInputs() {
 
         $('#start_button').click(() => {
-            this.scene = new SceneTitle(this.game)
-            this.game.scene = this.scene
-            $('#start_button').show()
+            var scene = new SceneMain(this.game)
+            this.game.scene = scene
         })
         // window.removeEventListener('click', shift)
 	}

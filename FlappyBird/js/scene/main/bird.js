@@ -6,8 +6,8 @@ class Bird extends MyImage{
     
     setup(){
         this.anim = []
-        this.w = 40
-        this.h = 40
+        this.w = 38
+        this.h = 38
         for(var i = 0; i < 3; i++){
             var name = `bird${i}`
             var img = this.game.textureByName(name)

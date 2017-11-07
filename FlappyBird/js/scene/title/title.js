@@ -10,10 +10,10 @@ class SceneTitle extends Scene{
 		this.bg2 = new MyImage(this.game, 'background',this.bg1.texture.width - 5)
 		this.land1 = new MyImage(this.game, 'land',0,520)
 		this.land2 = new MyImage(this.game, 'land',this.land1.texture.width,520)
-        this.bird = new Bird(this.game)
-        this.bird.speed = 1
-        this.tutorial = new MyImage(this.game, 'text_ready', 100, 120)
-        this.text_ready = new MyImage(this.game, 'tutorial', 140, 260)
+		this.bird = new Bird(this.game)
+		this.bird.x = 180
+		this.bird.speed = 1
+		this.title = new MyImage(this.game, 'title', 120, 160)
 		// this.game.registerAction('f', function () {
 		//   ball.fire()
 		// })
@@ -22,9 +22,8 @@ class SceneTitle extends Scene{
 		this.addElement(this.bg2)
 		this.addElement(this.bird)
 		this.addElement(this.land1)
-        this.addElement(this.land2)
-        this.addElement(this.tutorial)
-        this.addElement(this.text_ready)
+		this.addElement(this.land2)
+		this.addElement(this.title)
 		this.setupInputs()
 		
 		this.bird.update = () => {
@@ -48,8 +47,8 @@ class SceneTitle extends Scene{
 	setupInputs() {
         
         $('#start_button').click(() => {
-            this.scene = new SceneMain(this.game)
-			this.game.scene = this.scene
+			var scene = new SceneMain(this.game)
+			this.game.scene = scene
 			$('#start_button').hide()
         })
         // window.removeEventListener('click', shift)

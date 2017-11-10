@@ -84,8 +84,7 @@ class SceneMain extends Scene {
 		this.addElement(this.land2)
 
 		$('#canvasDiv').click( () => {
-            this.bird.y -= 5
-            this.bird.speed = -10
+            this.bird.jump()
         })
 	}
 

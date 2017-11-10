@@ -7,6 +7,8 @@ class GameFrame {
         this.runCallBack = runCallBack
         this.canvas = document.getElementById("canvasDiv")
         this.context = this.canvas.getContext('2d')
+        this.birdcanvasDiv = document.getElementById("birdcanvasDiv")
+        this.birdcanvas = this.birdcanvasDiv.getContext("2d")
 
         window.addEventListener('keydown', event => {
             this.keydowns[event.key] = true

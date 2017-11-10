@@ -8,6 +8,11 @@
 			margin-right: 10px;
 		}
 
+		#canvasDiv {
+			margin: 20px;
+			border: 1px solid gray;
+		}
+
 		body {
 			-webkit-user-select: none;
 			-moz-user-select: none;
@@ -17,8 +22,8 @@
 
 		#start_button {
 			position: absolute;
-			top: 400px;
-			left: 140px;
+			top: 420px;
+			left: 160px;
 			border: none;
 			background: none;
 			outline: none;
@@ -42,12 +47,13 @@
 
 <body>
 	<canvas id="canvasDiv" width="400" height="558"></canvas>
+	<canvas id = "birdcanvasDiv" width = "38" height = "38"></canvas>
 	<button id="start_button">
 		<img src="img/button_play.png">
 	</button>
 	<br/>
-	<div id="debugButton">
-		<button type="button" class="btn btn-default">
+	<div id="debugButton" >
+		<button type = "button" class = "btn btn-default">
 			DEBUG
 		</button>
 	</div>

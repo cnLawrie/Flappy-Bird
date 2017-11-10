@@ -21,8 +21,8 @@ class pipe{
         }
         this.speed = 3
         for(var i = 0; i < 5; i ++){
-            this.textures[2*i].x = (i + 2) * 180
-            this.textures[2*i + 1].x = (i + 2) * 180
+            this.textures[2 * i].x = (i + 2) * 180
+            this.textures[2 * i + 1].x = (i + 2) * 180
         }
         
     }

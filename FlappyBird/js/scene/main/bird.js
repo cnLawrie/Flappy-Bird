@@ -18,6 +18,13 @@ class Bird extends MyImage{
         this.animCount = 4
         this.gravity = 2
         this.speed = 2
+        this.rotation = 0
+    }
+
+    jump() {
+        this.y -= 5
+        this.speed = -10
+        this.rotation = -20
     }
 
     update(){
@@ -32,6 +39,23 @@ class Bird extends MyImage{
         if(this.animCount % 2 == 0){
             this.y += this.speed
             this.speed += this.gravity
+            //更新角度
+            if(this.rotation <= 90){
+                this.rotation += 3
+            }
         }     
+    }
+
+    draw(){
+        var ctx = this.game.context
+        ctx.save()
+
+        var w2 = this.w / 2
+        var h2 = this.h / 2
+        ctx.rotate(this.rotation * Math.PI / 180);
+        ctx.translate(this.x + w2, this.y + h2)
+        ctx.translate(-w2, -h2)
+        ctx.drawImage(this.texture, 0, 0)
+        ctx.restore()
     }
 }

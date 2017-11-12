@@ -1,6 +1,5 @@
 const config = {
 	player_speed: 5,
-	bullet_speed: 5,
 	background_speed: 1,
 }
 
@@ -28,6 +27,11 @@ class SceneMain extends Scene {
 		this.bird = new Bird(this.game)
 		this.bird.speed = 1
 		this.started = false
+		this.score = new MyImage(this.game, 'score_0', 180, 50)
+		this.score2Digit = new MyImage(this.game, "score_1")
+		window.score = 0
+		this.scoreUpdate = false
+		this.scores = []
 		
 		this.addElement(this.bg1)
 		this.addElement(this.bg2)
@@ -35,8 +39,13 @@ class SceneMain extends Scene {
 		this.addElement(this.land1)
         this.addElement(this.land2)
         this.addElement(this.tutorial)
-        this.addElement(this.text_ready)
+		this.addElement(this.text_ready)
 		
+		for(var i = 0; i < 10; i++){
+			var name = `score_${i}`
+			var img = this.game.textureByName(name)
+			this.scores.push(img)
+		}
 
 		this.bird.update = () => {
             var bird = this.bird
@@ -80,6 +89,7 @@ class SceneMain extends Scene {
 		this.pipe = new pipe(this.game)
 		this.addElement(this.bird)
 		this.addElement(this.pipe)
+        this.addElement(this.score)
 		this.addElement(this.land1)
 		this.addElement(this.land2)
 
@@ -122,6 +132,24 @@ class SceneMain extends Scene {
 					var scene = new SceneEnd(this.game)
 					this.game.scene = scene
 				}
+			} else if(pipes[i].x + pipes[i].w == 99) {
+				this.scoreUpdate = !this.scoreUpdate
+				log(this.scoreUpdate)
+				if(this.scoreUpdate){
+					window.score++
+					if(window.score / 10 != 0 && window.score % 10 == 0) {
+						this.score2Digit.texture = this.scores[window.score / 10 % 10]
+						if(window.score / 10 == 1) {
+							var x1 = this.score.x, y = this.score.y
+							this.score2Digit.x = x1 - this.score.w / 3 * 2
+							this.score2Digit.y = y
+							this.addElement(this.score2Digit)
+							this.score.x += this.score.w / 3 * 2
+						}
+					}
+					this.score.texture = this.scores[window.score % 10]
+				}
+				log(window.score)
 			}
         }
 	}

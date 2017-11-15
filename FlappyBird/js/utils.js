@@ -22,6 +22,3 @@ const randomBetween=function(start, end) {
     return Math.floor(float+start)
 }
 
-const delFromEle = function(){
-	
-}

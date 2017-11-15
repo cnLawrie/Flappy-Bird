@@ -37,52 +37,23 @@
 	<script src="js/image.js"></script>
 	<script src="js/utils.js"></script>
 	<script src="js/scene/scene_class.js"></script>
-	<script src="js/scene/main/pipe.js"></script>
-	<script src="js/scene/main/bird.js"></script>
-	<script src="js/scene/main/scene.js"></script>
-	<script src="js/scene/end/end.js"></script>
-	<script src="js/scene/title/title.js"></script>
+	<script src="js/scene/pipe.js"></script>
+	<script src="js/scene/bird.js"></script>
+	<script src="js/scene/main.js"></script>
+	<script src="js/scene/end.js"></script>
+	<script src="js/scene/title.js"></script>
 	<script src="js/frame.js"></script>
 </head>
 
 <body>
 	<canvas id="canvasDiv" width="400" height="558"></canvas>
-	<canvas id = "birdcanvasDiv" width = "38" height = "38"></canvas>
+	<canvas id="birdcanvasDiv" width="38" height="38"></canvas>
 	<button id="start_button">
 		<img src="img/button_play.png">
 	</button>
 	<br/>
-	<div id="debugButton" >
-		<button type = "button" class = "btn btn-default">
-			DEBUG
-		</button>
-	</div>
-	<br>
-	<div class="whole">
-		<label>
-			整体速度:
-			<span class="speed">50</span>
-			<input id="whole-speed" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="50"
-			/>
-		</label>
-	</div>
-	<br>
-	<div class="component">
-		<label>
-			玩家速度:
-			<span class="speed">5</span>
-			<input class="auto-slider" type="range" data-speed="config.player_speed" data-slider-min="0" data-slider-max="10" data-slider-step="1"
-			    data-slider-value="5" />
-		</label>
-	</div>
-
-	<script src="js/main.js"></script>
-	<script>
-		$('#debugButton').click(function () {
-			$('.whole').toggle(500)
-			$('.component').toggle(500)
-		})
-	</script>
+	
+	<script src="js/home.js"></script>
 </body>
 
 </html>

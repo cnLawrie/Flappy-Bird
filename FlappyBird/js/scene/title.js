@@ -14,9 +14,6 @@ class SceneTitle extends Scene{
 		this.bird.x = 180
 		this.bird.speed = 1
 		this.title = new MyImage(this.game, 'title', 120, 160)
-		// this.game.registerAction('f', function () {
-		//   ball.fire()
-		// })
 
 		this.addElement(this.bg1)
 		this.addElement(this.bg2)
@@ -37,11 +34,8 @@ class SceneTitle extends Scene{
             }
             bird.y -= bird.speed
         }
-
-
         $('.whole').hide()
 		$('.component').hide()
-		
 	}
 
 	setupInputs() {
@@ -78,6 +72,5 @@ class SceneTitle extends Scene{
 			bg2.x = bg1.texture.width - 8
 		}
     }
-
 }
 

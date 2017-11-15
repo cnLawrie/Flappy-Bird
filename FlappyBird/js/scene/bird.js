@@ -32,14 +32,16 @@ class Bird extends MyImage{
             return
         }
         this.animCount--
+        //flap the wing
         if(this.animCount == 0){
             this.texture = this.anim[(++this.animIndex) % this.anim.length]
             this.animCount = 5
         }
+
         if(this.animCount % 2 == 0){
             this.y += this.speed
             this.speed += this.gravity
-            //更新角度
+            //update rotation
             if(this.rotation <= 90){
                 this.rotation += 3
             }
@@ -48,8 +50,8 @@ class Bird extends MyImage{
 
     draw(){
         var ctx = this.game.context
+        //rotate
         ctx.save()
-
         var w2 = this.w / 2
         var h2 = this.h / 2
         ctx.translate(this.x + w2, this.y + h2)
